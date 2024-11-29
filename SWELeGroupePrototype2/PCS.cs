@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Windows.Forms.VisualStyles;
 using System.Xml.Linq;
+using Microsoft.Win32.SafeHandles;
 
 
 public class PCS
@@ -118,7 +119,7 @@ public class PCS
 
 
 	//Database standin variables 
-	string fp_Customers, fp_Employees, fp_Products, fp_Orders, fp_Deliveries;
+	string fp_Customers = "./DataFiles/Customers.txt", fp_Employees, fp_Products, fp_Orders, fp_Deliveries;
 
     /// <summary>
     /// compares log in information with existing accounts
@@ -127,7 +128,7 @@ public class PCS
     /// <param name="password"></param>
     public bool LogIn(string username, string password)
 	{
-		try
+        try
 		{
             List<string> customers = new List<string>();
             StreamReader sr = new StreamReader(fp_Customers);
@@ -162,7 +163,7 @@ public class PCS
 	{
 		try
 		{
-			string toAdd = "" + newData.CustomerID + "," + newData.Username + "," + newData.Password + "," + newData.FirstName + "," + newData.LastName + "," + newData.Email + "," + newData.PhoneNumber + "," + newData.Address + (newData.CreditCard == null ? "none" : "" + newData.CreditCard.CardHolderName + "|" + newData.CreditCard.ExpirationDate + "|" + newData.CreditCard.CardNum + "|" + newData.CreditCard.CSV + "|" + newData.CreditCard.BillingAddress);
+			string toAdd = "" + newData.CustomerID + "," + newData.Username + "," + newData.Password + "," + newData.FirstName + "," + newData.LastName + "," + newData.Email + "," + newData.PhoneNumber + "," + newData.Address + ","+ (newData.CreditCard == null ? "none" : "" + newData.CreditCard.CardHolderName + "|" + newData.CreditCard.ExpirationDate + "|" + newData.CreditCard.CardNum + "|" + newData.CreditCard.CSV + "|" + newData.CreditCard.BillingAddress);
 
 			List<string> customers = new List<string>();
 			StreamReader sr = new StreamReader(fp_Customers);
@@ -172,16 +173,22 @@ public class PCS
 			}
 			sr.Close();
 
-
-			for (int i = 0; i < customers.Count; i++)
+			if (customers.Count == 0)
 			{
-				if (customers[i].Split(',')[0] == customerID.ToString())
+				customers.Add(toAdd);
+			}
+			else
+			{
+				for (int i = 0; i < customers.Count; i++)
 				{
-					customers[i] = toAdd;
-				}
-				else if (i == customers.Count - 1)
-				{
-					customers.Add(toAdd);
+					if (customers[i].Split(',')[0] == customerID.ToString())
+					{
+						customers[i] = toAdd;
+					}
+					else if (i == customers.Count - 1)
+					{
+						customers.Add(toAdd);
+					}
 				}
 			}
 
@@ -194,7 +201,7 @@ public class PCS
 
             return true;
 		}
-		catch (Exception e) { return false; }
+		catch (Exception e) { Console.WriteLine(e.Message); return false; }
     }
 
     public OrderData RetrieveOrder(ulong orderID)
@@ -444,6 +451,21 @@ public class PCS
     }
     public PCS()
     {
-
+        CustomerData sample = new CustomerData();
+        sample.FirstName = "John";
+        sample.LastName = "Doe";
+        sample.Username = "username";
+        sample.Password = "password";
+        sample.Email = "email@some.thing";
+        sample.Address = "123 Someplace cool City zip";
+        sample.CustomerID = ulong.MinValue;
+        sample.PhoneNumber = "098-765-4321";
+        sample.CreditCard = new CustomerData.CardInfo();
+        sample.CreditCard.CardNum = "1234-5678-9110-1984";
+        sample.CreditCard.CSV = "451";
+        sample.CreditCard.CardHolderName = "John Doe";
+        sample.CreditCard.ExpirationDate = "12/24";
+        sample.CreditCard.BillingAddress = "123 Someplace cool City zip";
+        UpdateAccountInfo(sample.CustomerID, sample);
     }
 }

@@ -19,11 +19,11 @@ namespace SWELeGroupePrototype2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(PCS.Singleton.LogIn(textBox1.Text, textBox2.Text)) 
+            if(PCS.Singleton.LogIn(textBox1.Text, textBox2.Text))
             {
                 Home home = new Home();
                 home.Show();
-                this.Close();            
+                this.Hide();            
             }
         }
     }
