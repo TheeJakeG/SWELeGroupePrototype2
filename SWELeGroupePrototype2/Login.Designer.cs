@@ -20,6 +20,8 @@
             base.Dispose(disposing);
         }
 
+
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -58,6 +60,8 @@
             // 
             // textBox1
             // 
+            this.textBox1.AccessibleDescription = "UsernameField";
+            this.textBox1.AccessibleName = "UsernameField";
             this.textBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox1.Location = new System.Drawing.Point(293, 189);
             this.textBox1.Name = "textBox1";
@@ -68,6 +72,7 @@
             // 
             // textBox2
             // 
+            this.textBox2.AccessibleName = "PasswordField";
             this.textBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox2.Location = new System.Drawing.Point(293, 229);
             this.textBox2.Name = "textBox2";
@@ -117,6 +122,7 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "Enter";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Login
             // 

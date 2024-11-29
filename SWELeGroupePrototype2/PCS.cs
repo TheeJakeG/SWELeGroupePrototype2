@@ -1,13 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Diagnostics;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms.VisualStyles;
 using System.Xml.Linq;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+
 
 public class PCS
 {
+    public static PCS Singleton;
     /// <summary>
     /// holds information of active employees
     /// </summary>
@@ -136,7 +139,7 @@ public class PCS
 
 			for (int i = 0; i < customers.Count; i++)
 			{
-				string[] c = customers[i].Split(",");
+				string[] c = customers[i].Split(',');
 				if (c[1] == username && c[2] == password)
 				{
 					AccountType = Account.customer;
@@ -172,7 +175,7 @@ public class PCS
 
 			for (int i = 0; i < customers.Count; i++)
 			{
-				if (customers[i].Split(",")[0] == customerID.ToString())
+				if (customers[i].Split(',')[0] == customerID.ToString())
 				{
 					customers[i] = toAdd;
 				}
@@ -205,9 +208,9 @@ public class PCS
 
 			for (int i = 0; i < orders.Count; i++)
 			{
-				if(orderID.ToString() == orders[i].Split(",")[0])
+				if(orderID.ToString() == orders[i].Split(',')[0])
 				{
-					string[] data = orders[i].Split(",");
+					string[] data = orders[i].Split(',');
 					OrderData newData = new OrderData();
 
 					newData.ID = ulong.Parse(data[0]);
@@ -219,7 +222,7 @@ public class PCS
 					for(int j = 5; j < data.Length; j++)
 					{
 						Product p = new Product();
-						string[] pData = data[j].Split("|");
+						string[] pData = data[j].Split('|');
 						p.ProductID = ulong.Parse(pData[0]);
 						p.Count = int.Parse(pData[1]);
 
@@ -230,7 +233,7 @@ public class PCS
 
 						for(int k  = 0; k < products.Count; k++)
 						{
-							string[] split = products[k].Split(",");
+							string[] split = products[k].Split(',');
 							if (p.ProductID.ToString() == split[0])
 							{
                                 p.ProductName = split[1];
@@ -261,9 +264,9 @@ public class PCS
 
             for (int i = 0; i < orders.Count; i++)
             {
-                if (deliveryID.ToString() == orders[i].Split(",")[0])
+                if (deliveryID.ToString() == orders[i].Split(',')[0])
                 {
-                    string[] data = orders[i].Split(",");
+                    string[] data = orders[i].Split(',');
                     DeliveryOrder newOrder = new DeliveryOrder();
 
 					newOrder.DeliveryID = ulong.Parse(data[0]);
@@ -359,7 +362,7 @@ public class PCS
 
             for (int i = 0; i < orders.Count; i++)
 			{
-				if (orders[i].Split(",")[0] == orderID.ToString())
+				if (orders[i].Split(',')[0] == orderID.ToString())
 				{
 					orders[i] = toAdd;
 				}
@@ -394,7 +397,7 @@ public class PCS
 
             for (int i = 0; i < orders.Count; i++)
             {
-				if (orders[i].Split(",")[0] == delOrderID.ToString())
+				if (orders[i].Split(',')[0] == delOrderID.ToString())
                 {
                     orders[i] = toAdd;
                 }
