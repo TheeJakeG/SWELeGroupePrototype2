@@ -16,5 +16,15 @@ namespace SWELeGroupePrototype2
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(PCS.Singleton.LogIn(textBox1.Text, textBox2.Text))
+            {
+                Home home = new Home();
+                home.Show();
+                this.Hide();            
+            }
+        }
     }
 }
