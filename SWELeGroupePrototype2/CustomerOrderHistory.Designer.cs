@@ -115,7 +115,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.Firebrick;
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(672, 337);
+            this.button1.Location = new System.Drawing.Point(662, 327);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 37);
             this.button1.TabIndex = 1;
