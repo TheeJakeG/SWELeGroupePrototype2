@@ -69,6 +69,7 @@
             this.textBox1.TabIndex = 2;
             this.textBox1.Text = "Enter Username Here";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // textBox2
             // 
@@ -80,6 +81,7 @@
             this.textBox2.TabIndex = 3;
             this.textBox2.Text = "Enter Password Here";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
             // 
             // checkBox1
             // 
@@ -98,8 +100,9 @@
             this.EmployeeLoginButton.Name = "EmployeeLoginButton";
             this.EmployeeLoginButton.Size = new System.Drawing.Size(114, 23);
             this.EmployeeLoginButton.TabIndex = 5;
-            this.EmployeeLoginButton.Text = "Employee Login";
+            this.EmployeeLoginButton.Text = "Create Account";
             this.EmployeeLoginButton.UseVisualStyleBackColor = false;
+            this.EmployeeLoginButton.Click += new System.EventHandler(this.EmployeeLoginButton_Click);
             // 
             // label3
             // 
