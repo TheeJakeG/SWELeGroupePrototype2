@@ -36,14 +36,15 @@
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.orderHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pizzaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.breadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saucesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dessertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.drinksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.orderHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -68,9 +69,11 @@
             this.button3.TabIndex = 23;
             this.button3.Text = "Order";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.orderToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 58);
@@ -115,6 +118,7 @@
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
             this.homeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.homeToolStripMenuItem.Text = "Home";
+            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // menuToolStripMenuItem
             // 
@@ -130,53 +134,73 @@
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.menuToolStripMenuItem.Text = "Menu";
             // 
-            // orderHistoryToolStripMenuItem
-            // 
-            this.orderHistoryToolStripMenuItem.Name = "orderHistoryToolStripMenuItem";
-            this.orderHistoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.orderHistoryToolStripMenuItem.Text = "Order History";
-            // 
-            // orderToolStripMenuItem
-            // 
-            this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
-            this.orderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.orderToolStripMenuItem.Text = "Order";
-            // 
             // pizzaToolStripMenuItem
             // 
             this.pizzaToolStripMenuItem.Name = "pizzaToolStripMenuItem";
             this.pizzaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pizzaToolStripMenuItem.Text = "Pizza";
+            this.pizzaToolStripMenuItem.Click += new System.EventHandler(this.pizzaToolStripMenuItem_Click);
             // 
             // breadToolStripMenuItem
             // 
             this.breadToolStripMenuItem.Name = "breadToolStripMenuItem";
             this.breadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.breadToolStripMenuItem.Text = "Bread";
+            this.breadToolStripMenuItem.Click += new System.EventHandler(this.breadToolStripMenuItem_Click);
             // 
             // wingsToolStripMenuItem
             // 
             this.wingsToolStripMenuItem.Name = "wingsToolStripMenuItem";
             this.wingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.wingsToolStripMenuItem.Text = "Wings";
+            this.wingsToolStripMenuItem.Click += new System.EventHandler(this.wingsToolStripMenuItem_Click);
             // 
             // saucesToolStripMenuItem
             // 
             this.saucesToolStripMenuItem.Name = "saucesToolStripMenuItem";
             this.saucesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saucesToolStripMenuItem.Text = "Sauces";
+            this.saucesToolStripMenuItem.Click += new System.EventHandler(this.saucesToolStripMenuItem_Click);
             // 
             // dessertToolStripMenuItem
             // 
             this.dessertToolStripMenuItem.Name = "dessertToolStripMenuItem";
             this.dessertToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dessertToolStripMenuItem.Text = "Dessert";
+            this.dessertToolStripMenuItem.Click += new System.EventHandler(this.dessertToolStripMenuItem_Click);
             // 
             // drinksToolStripMenuItem
             // 
             this.drinksToolStripMenuItem.Name = "drinksToolStripMenuItem";
             this.drinksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.drinksToolStripMenuItem.Text = "Drinks";
+            this.drinksToolStripMenuItem.Click += new System.EventHandler(this.drinksToolStripMenuItem_Click);
+            // 
+            // orderHistoryToolStripMenuItem
+            // 
+            this.orderHistoryToolStripMenuItem.Name = "orderHistoryToolStripMenuItem";
+            this.orderHistoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.orderHistoryToolStripMenuItem.Text = "Order History";
+            this.orderHistoryToolStripMenuItem.Click += new System.EventHandler(this.orderHistoryToolStripMenuItem_Click);
+            // 
+            // orderToolStripMenuItem
+            // 
+            this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
+            this.orderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.orderToolStripMenuItem.Text = "Order";
+            this.orderToolStripMenuItem.Click += new System.EventHandler(this.orderToolStripMenuItem_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Firebrick;
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(694, 345);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 29);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // OrderHistory
             // 
@@ -190,6 +214,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "OrderHistory";
             this.Text = "OrderHistory";
+            this.Load += new System.EventHandler(this.OrderHistory_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
@@ -217,5 +242,6 @@
         private System.Windows.Forms.ToolStripMenuItem drinksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem orderHistoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem orderToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }

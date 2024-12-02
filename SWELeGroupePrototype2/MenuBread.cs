@@ -16,5 +16,76 @@ namespace SWELeGroupePrototype2
         {
             InitializeComponent();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        void LoadForm(Form f)
+        {
+            f.Show();
+            this.Close();
+        }
+
+        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadForm(new Home());
+        }
+
+        private void orderHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadForm(new OrderHistory());
+        }
+
+        private void orderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadForm(new OrderSummary());
+        }
+
+        private void pizzaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadForm(new MenuPizza());
+        }
+
+        private void breadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadForm(new MenuBread());
+        }
+
+        private void wingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadForm(new MenuWings());
+        }
+
+        private void saucesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadForm(new MenuSauces());
+        }
+
+        private void dessertToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadForm(new MenuDessert());
+        }
+
+        private void drinksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadForm(new MenuDrinks());
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            PCS.Singleton.C_OrderInProgress.Items.Add(PCS.Singleton.RetrieveProduct(ulong.Parse("0101")));
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PCS.Singleton.C_OrderInProgress.Items.Add(PCS.Singleton.RetrieveProduct(ulong.Parse("0102")));
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PCS.Singleton.C_OrderInProgress.Items.Add(PCS.Singleton.RetrieveProduct(ulong.Parse("0103")));
+        }
     }
 }

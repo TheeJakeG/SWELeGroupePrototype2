@@ -26,5 +26,21 @@ namespace SWELeGroupePrototype2
                 this.Hide();            
             }
         }
+
+        private void textBox1_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+        }
+
+        private void textBox2_Click(object sender, EventArgs e)
+        {
+            textBox2.Text = "";
+        }
+
+        private void EmployeeLoginButton_Click(object sender, EventArgs e)
+        {
+            CreateAccount createAccount = new CreateAccount();
+            createAccount.Show();
+        }
     }
 }

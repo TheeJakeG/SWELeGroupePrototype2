@@ -7,34 +7,35 @@ using System.Text;
 using System.Windows.Forms.VisualStyles;
 using System.Xml.Linq;
 using Microsoft.Win32.SafeHandles;
+using System.Security.Cryptography;
 
 
 public class PCS
 {
-    public static PCS Singleton;
-    /// <summary>
-    /// holds information of active employees
-    /// </summary>
-    public class EmployeeData 
+	public static PCS Singleton;
+	/// <summary>
+	/// holds information of active employees
+	/// </summary>
+	public class EmployeeData
 	{
 		public ulong EmployeeID;
 		public string Title, Address, FirstName, LastName, PhoneNumber, Email, Username, Password;
-		public EmployeeData(ulong EmployeeID) 
+		public EmployeeData(ulong EmployeeID)
 		{
 			this.EmployeeID = EmployeeID;
 			//get data from PCS
 		}
 		public EmployeeData() { }
 	}
-    /// <summary>
-    /// holds information of active customer
-    /// </summary>
-    public class CustomerData 
+	/// <summary>
+	/// holds information of active customer
+	/// </summary>
+	public class CustomerData
 	{
-        /// <summary>
-        /// holds info for customer payment cards
-        /// </summary>
-        public class CardInfo 
+		/// <summary>
+		/// holds info for customer payment cards
+		/// </summary>
+		public class CardInfo
 		{
 			public string CardHolderName, ExpirationDate, CardNum, CSV, BillingAddress;
 		}
@@ -47,26 +48,34 @@ public class PCS
 		}
 		public CustomerData() { }
 	}
-    /// <summary>
-    /// represents an order
-    /// </summary>
-    public class OrderData 
+	/// <summary>
+	/// represents an order
+	/// </summary>
+	public class OrderData
 	{
-        public enum OrderStatus
-        {
+		public enum OrderStatus
+		{
 
-        }
-        public ulong ID;
-        public DateTime Date; //Time placed
+		}
+		public ulong ID { get; set; }
+		public DateTime Date;
+		public string DateOrdered { get => Date.ToString(); }
 		public ulong CustomerID;
-        public List<Product> Items;
-        public decimal OrderTotal;
+		public decimal OrderTotal { get; set; }
+        public List<Product> Items { get; set; }
         public OrderStatus Status;
+
+		public OrderData()
+		{
+			Items = new List<Product>();
+			Random random = new Random();
+            ID = (ulong)random.Next(int.MaxValue);
+        }
 	}
-    /// <summary>
-    /// represents an order for delivery
-    /// </summary>
-    public class DeliveryOrder 
+	/// <summary>
+	/// represents an order for delivery
+	/// </summary>
+	public class DeliveryOrder
 	{
 		public enum DeliveryStatus
 		{
@@ -81,22 +90,35 @@ public class PCS
 	/// <summary>
 	/// represents a product that can be ordered - stored with format: id, name, description, category, price
 	/// </summary>
-	public class Product 
+	public class Product
 	{
 		public enum ProductCategory
 		{
-
+			None,
+			Bread,
+			Dessert,
+			Drink,
+			Pizza,
+			Sauce,
+			Wings
 		}
-        public ulong ProductID;
-        public decimal UnitPrice;
-        public ProductCategory Category;
-        public string ProductName, ProductDescription;
-        public int Count;
+		public ulong ProductID;
+		public string ProductName { get; set; }
+		public decimal UnitPrice { get; set; }
+		public ProductCategory Category;
+		public string ProductDescription;
+		public int Count;
 
-		public Product() { }
-		public Product(ulong ProductID) 
+		public Product() { Count = 1; }
+		public Product(ulong ProductID)
 		{
 			this.ProductID = ProductID;
+			Product newP = PCS.Singleton.RetrieveProduct(ProductID);
+			this.ProductName = newP.ProductName;
+			this.UnitPrice = newP.UnitPrice;
+			this.Category = newP.Category;
+			this.ProductDescription = newP.ProductDescription;
+			Count = 1;
 		}
 	}
 
@@ -109,17 +131,17 @@ public class PCS
 		admin
 	}
 	Account AccountType;
-	ulong AccountID;
+	public ulong AccountID;
 	EmployeeData[] Employees;
 	OrderData[] E_CurrentOrders;
 	DeliveryOrder[] E_ReadyToDeliver;
 	DeliveryOrder[] E_DeliveriesInProgress;
-	OrderData C_OrderInProgress;
-	DeliveryOrder C_ActiveDelivery;
+	public OrderData C_OrderInProgress;
+	public DeliveryOrder C_ActiveDelivery;
 
 
 	//Database standin variables 
-	string fp_Customers = "./DataFiles/Customers.txt", fp_Employees, fp_Products, fp_Orders, fp_Deliveries;
+	public string fp_Customers = "./DataFiles/Customers.txt", fp_Employees, fp_Products = "./DataFiles/Products.txt", fp_Orders = "./DataFiles/Orders.txt", fp_Deliveries;
 
     /// <summary>
     /// compares log in information with existing accounts
@@ -145,11 +167,14 @@ public class PCS
 				{
 					AccountType = Account.customer;
 					AccountID = ulong.Parse(c[0]);
-					return true;
+					C_OrderInProgress = new OrderData();
+                    
+                    return true;
 				}
 			}
         }
 		catch (Exception e) { }
+		
 		return false;
 	}
 
@@ -293,6 +318,53 @@ public class PCS
         return null;
     }
     
+	/// <summary>
+	/// returns data of customer from database
+	/// </summary>
+	/// <param name="ID"></param>
+	/// <returns></returns>
+	public CustomerData RetrieveCustomerData(ulong ID)
+	{
+        try
+        {
+            List<string> customers = new List<string>();
+            StreamReader sr = new StreamReader(fp_Customers);
+            while (!sr.EndOfStream) { customers.Add(sr.ReadLine()); }
+            sr.Close();
+
+            for (int i = 0; i < customers.Count; i++)
+            {
+                if (ID == ulong.Parse(customers[i].Split(',')[0]))
+                {
+                    string[] data = customers[i].Split(',');
+                    CustomerData newData = new CustomerData();
+
+					newData.Username = data[1];
+					newData.Password = data[2];
+					newData.FirstName = data[3];
+					newData.LastName = data[4];
+					newData.Email = data[5];
+					newData.PhoneNumber = data[6];
+					newData.Address = data[7];
+
+					if(data[8] != "none")
+					{
+						newData.CreditCard = new CustomerData.CardInfo();
+						string[] cData = data[8].Split('|');
+						newData.CreditCard.CardHolderName = cData[0];
+						newData.CreditCard.ExpirationDate = cData[1];
+						newData.CreditCard.CardNum = cData[2];
+						newData.CreditCard.CSV = cData[3];
+						newData.CreditCard.BillingAddress = cData[4];
+					}
+
+					return newData;
+                }
+            }
+        }
+        catch (Exception e) { }
+        return null;
+    }
 
     public void PrintReceipt(ulong orderID)
 	{
@@ -369,7 +441,7 @@ public class PCS
 
             for (int i = 0; i < orders.Count; i++)
 			{
-				if (orders[i].Split(',')[0] == orderID.ToString())
+				if (ulong.Parse(orders[i].Split(',')[0]) == orderID)
 				{
 					orders[i] = toAdd;
 				}
@@ -404,7 +476,7 @@ public class PCS
 
             for (int i = 0; i < orders.Count; i++)
             {
-				if (orders[i].Split(',')[0] == delOrderID.ToString())
+				if (ulong.Parse(orders[i].Split(',')[0]) == delOrderID)
                 {
                     orders[i] = toAdd;
                 }
@@ -434,12 +506,43 @@ public class PCS
     }
     public OrderData FinalizeOrder(OrderData order)
     {
+		order.Date = DateTime.Now;
+		order.OrderTotal = 0;
 		foreach(Product p in order.Items)
 		{
 			order.OrderTotal += p.UnitPrice * p.Count;
 		}
 		//store order?
 		return order;
+    }
+	public Product RetrieveProduct(ulong pID)
+	{
+        try
+        {
+            List<string> products = new List<string>();
+            StreamReader sr = new StreamReader(fp_Products);
+            while (!sr.EndOfStream) { products.Add(sr.ReadLine()); }
+            sr.Close();
+
+            for (int i = 0; i < products.Count; i++)
+            {
+                if (pID == ulong.Parse(products[i].Split(',')[0]))
+                {
+                    string[] data = products[i].Split(',');
+                    Product newProduct = new Product();
+
+					newProduct.ProductID = ulong.Parse(data[0]);
+					newProduct.ProductName = data[1];
+					newProduct.ProductDescription = data[2];
+					newProduct.Category = (Product.ProductCategory)int.Parse(data[3]);
+					newProduct.UnitPrice = decimal.Parse(data[4]);
+
+                    return newProduct;
+                }
+            }
+        }
+        catch (Exception e) { }
+        return null;
     }
     public void ShowOrders()
     {
@@ -451,7 +554,7 @@ public class PCS
     }
     public PCS()
     {
-        CustomerData sample = new CustomerData();
+        /*CustomerData sample = new CustomerData();
         sample.FirstName = "John";
         sample.LastName = "Doe";
         sample.Username = "username";
@@ -466,6 +569,6 @@ public class PCS
         sample.CreditCard.CardHolderName = "John Doe";
         sample.CreditCard.ExpirationDate = "12/24";
         sample.CreditCard.BillingAddress = "123 Someplace cool City zip";
-        UpdateAccountInfo(sample.CustomerID, sample);
+        UpdateAccountInfo(sample.CustomerID, sample);*/
     }
 }

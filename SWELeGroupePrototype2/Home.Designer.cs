@@ -40,6 +40,7 @@
             this.dessertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.drinksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -55,7 +56,6 @@
             this.Favorite3 = new System.Windows.Forms.Button();
             this.Favorite2 = new System.Windows.Forms.Button();
             this.Favorite1 = new System.Windows.Forms.Button();
-            this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -89,12 +89,14 @@
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.optionsToolStripMenuItem.Text = "Options";
+            this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
             // 
             // homeToolStripMenuItem
             // 
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
             this.homeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.homeToolStripMenuItem.Text = "Home";
+            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // menuToolStripMenuItem
             // 
@@ -112,44 +114,58 @@
             // pizzaToolStripMenuItem
             // 
             this.pizzaToolStripMenuItem.Name = "pizzaToolStripMenuItem";
-            this.pizzaToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.pizzaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pizzaToolStripMenuItem.Text = "Pizza";
+            this.pizzaToolStripMenuItem.Click += new System.EventHandler(this.pizzaToolStripMenuItem_Click);
             // 
             // breadToolStripMenuItem
             // 
             this.breadToolStripMenuItem.Name = "breadToolStripMenuItem";
-            this.breadToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.breadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.breadToolStripMenuItem.Text = "Bread";
+            this.breadToolStripMenuItem.Click += new System.EventHandler(this.breadToolStripMenuItem_Click);
             // 
             // wingsToolStripMenuItem
             // 
             this.wingsToolStripMenuItem.Name = "wingsToolStripMenuItem";
-            this.wingsToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.wingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.wingsToolStripMenuItem.Text = "Wings";
+            this.wingsToolStripMenuItem.Click += new System.EventHandler(this.wingsToolStripMenuItem_Click);
             // 
             // saucesToolStripMenuItem
             // 
             this.saucesToolStripMenuItem.Name = "saucesToolStripMenuItem";
-            this.saucesToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.saucesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saucesToolStripMenuItem.Text = "Sauces";
+            this.saucesToolStripMenuItem.Click += new System.EventHandler(this.saucesToolStripMenuItem_Click);
             // 
             // dessertToolStripMenuItem
             // 
             this.dessertToolStripMenuItem.Name = "dessertToolStripMenuItem";
-            this.dessertToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.dessertToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dessertToolStripMenuItem.Text = "Dessert";
+            this.dessertToolStripMenuItem.Click += new System.EventHandler(this.dessertToolStripMenuItem_Click);
             // 
             // drinksToolStripMenuItem
             // 
             this.drinksToolStripMenuItem.Name = "drinksToolStripMenuItem";
-            this.drinksToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.drinksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.drinksToolStripMenuItem.Text = "Drinks";
+            this.drinksToolStripMenuItem.Click += new System.EventHandler(this.drinksToolStripMenuItem_Click);
             // 
             // orderHistoryToolStripMenuItem
             // 
             this.orderHistoryToolStripMenuItem.Name = "orderHistoryToolStripMenuItem";
             this.orderHistoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.orderHistoryToolStripMenuItem.Text = "Order History";
+            this.orderHistoryToolStripMenuItem.Click += new System.EventHandler(this.orderHistoryToolStripMenuItem_Click);
+            // 
+            // orderToolStripMenuItem
+            // 
+            this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
+            this.orderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.orderToolStripMenuItem.Text = "Order";
+            this.orderToolStripMenuItem.Click += new System.EventHandler(this.orderToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -215,6 +231,7 @@
             this.WeeklySpecial3.TabIndex = 2;
             this.WeeklySpecial3.Text = "Weekly Special 3";
             this.WeeklySpecial3.UseVisualStyleBackColor = true;
+            this.WeeklySpecial3.Click += new System.EventHandler(this.pizzaToolStripMenuItem_Click);
             // 
             // WeeklySpecial2
             // 
@@ -224,6 +241,7 @@
             this.WeeklySpecial2.TabIndex = 1;
             this.WeeklySpecial2.Text = "Weekly Special 2";
             this.WeeklySpecial2.UseVisualStyleBackColor = true;
+            this.WeeklySpecial2.Click += new System.EventHandler(this.pizzaToolStripMenuItem_Click);
             // 
             // WeeklySpecial1
             // 
@@ -233,6 +251,7 @@
             this.WeeklySpecial1.TabIndex = 0;
             this.WeeklySpecial1.Text = "Weekly Special 1";
             this.WeeklySpecial1.UseVisualStyleBackColor = true;
+            this.WeeklySpecial1.Click += new System.EventHandler(this.pizzaToolStripMenuItem_Click);
             // 
             // groupBox2
             // 
@@ -288,6 +307,7 @@
             this.Favorite3.TabIndex = 2;
             this.Favorite3.Text = "Favorite 3";
             this.Favorite3.UseVisualStyleBackColor = true;
+            this.Favorite3.Click += new System.EventHandler(this.pizzaToolStripMenuItem_Click);
             // 
             // Favorite2
             // 
@@ -297,6 +317,7 @@
             this.Favorite2.TabIndex = 1;
             this.Favorite2.Text = "Favorite 2";
             this.Favorite2.UseVisualStyleBackColor = true;
+            this.Favorite2.Click += new System.EventHandler(this.pizzaToolStripMenuItem_Click);
             // 
             // Favorite1
             // 
@@ -306,12 +327,7 @@
             this.Favorite1.TabIndex = 0;
             this.Favorite1.Text = "Favorite 1";
             this.Favorite1.UseVisualStyleBackColor = true;
-            // 
-            // orderToolStripMenuItem
-            // 
-            this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
-            this.orderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.orderToolStripMenuItem.Text = "Order";
+            this.Favorite1.Click += new System.EventHandler(this.pizzaToolStripMenuItem_Click);
             // 
             // Home
             // 

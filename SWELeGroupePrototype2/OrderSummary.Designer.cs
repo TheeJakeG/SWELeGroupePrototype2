@@ -40,14 +40,13 @@
             this.dessertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.drinksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Items = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -90,6 +89,7 @@
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
             this.homeToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.homeToolStripMenuItem.Text = "Home";
+            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // menuToolStripMenuItem
             // 
@@ -109,46 +109,61 @@
             this.pizzaToolStripMenuItem.Name = "pizzaToolStripMenuItem";
             this.pizzaToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.pizzaToolStripMenuItem.Text = "Pizza";
+            this.pizzaToolStripMenuItem.Click += new System.EventHandler(this.pizzaToolStripMenuItem_Click);
             // 
             // breadToolStripMenuItem
             // 
             this.breadToolStripMenuItem.Name = "breadToolStripMenuItem";
             this.breadToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.breadToolStripMenuItem.Text = "Bread";
+            this.breadToolStripMenuItem.Click += new System.EventHandler(this.breadToolStripMenuItem_Click);
             // 
             // wingsToolStripMenuItem
             // 
             this.wingsToolStripMenuItem.Name = "wingsToolStripMenuItem";
             this.wingsToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.wingsToolStripMenuItem.Text = "Wings";
+            this.wingsToolStripMenuItem.Click += new System.EventHandler(this.wingsToolStripMenuItem_Click);
             // 
             // saucesToolStripMenuItem
             // 
             this.saucesToolStripMenuItem.Name = "saucesToolStripMenuItem";
             this.saucesToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.saucesToolStripMenuItem.Text = "Sauces";
+            this.saucesToolStripMenuItem.Click += new System.EventHandler(this.saucesToolStripMenuItem_Click);
             // 
             // dessertToolStripMenuItem
             // 
             this.dessertToolStripMenuItem.Name = "dessertToolStripMenuItem";
             this.dessertToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.dessertToolStripMenuItem.Text = "Dessert";
+            this.dessertToolStripMenuItem.Click += new System.EventHandler(this.dessertToolStripMenuItem_Click);
             // 
             // drinksToolStripMenuItem
             // 
             this.drinksToolStripMenuItem.Name = "drinksToolStripMenuItem";
             this.drinksToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.drinksToolStripMenuItem.Text = "Drinks";
+            this.drinksToolStripMenuItem.Click += new System.EventHandler(this.drinksToolStripMenuItem_Click);
             // 
             // orderHistoryToolStripMenuItem
             // 
             this.orderHistoryToolStripMenuItem.Name = "orderHistoryToolStripMenuItem";
             this.orderHistoryToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.orderHistoryToolStripMenuItem.Text = "Order History";
+            this.orderHistoryToolStripMenuItem.Click += new System.EventHandler(this.orderHistoryToolStripMenuItem_Click);
+            // 
+            // orderToolStripMenuItem
+            // 
+            this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
+            this.orderToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.orderToolStripMenuItem.Text = "Order";
+            this.orderToolStripMenuItem.Click += new System.EventHandler(this.orderToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Location = new System.Drawing.Point(34, 77);
             this.groupBox1.Name = "groupBox1";
@@ -160,23 +175,13 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Items,
-            this.Price});
             this.dataGridView1.Location = new System.Drawing.Point(7, 20);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(723, 312);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // Items
-            // 
-            this.Items.HeaderText = "Items";
-            this.Items.Name = "Items";
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Price";
-            this.Price.Name = "Price";
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView1_UserDeletedRow);
             // 
             // button1
             // 
@@ -187,6 +192,7 @@
             this.button1.TabIndex = 19;
             this.button1.Text = "Order";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.orderToolStripMenuItem_Click);
             // 
             // button2
             // 
@@ -198,6 +204,7 @@
             this.button2.TabIndex = 20;
             this.button2.Text = "Checkout";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -209,12 +216,14 @@
             this.button3.TabIndex = 21;
             this.button3.Text = "Back";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
-            // orderToolStripMenuItem
+            // textBox1
             // 
-            this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
-            this.orderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.orderToolStripMenuItem.Text = "Order";
+            this.textBox1.Location = new System.Drawing.Point(89, 0);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 1;
             // 
             // OrderSummary
             // 
@@ -230,9 +239,11 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "OrderSummary";
             this.Text = "Order Summary";
+            this.Load += new System.EventHandler(this.OrderSummary_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -255,11 +266,10 @@
         private System.Windows.Forms.ToolStripMenuItem orderHistoryToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Items;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ToolStripMenuItem orderToolStripMenuItem;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

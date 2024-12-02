@@ -37,23 +37,23 @@
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.orderHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pizzaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.breadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saucesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dessertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.drinksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
+            this.orderHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -90,6 +90,7 @@
             this.button10.TabIndex = 0;
             this.button10.Text = "Pizza";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.pizzaToolStripMenuItem_Click);
             // 
             // button11
             // 
@@ -99,6 +100,7 @@
             this.button11.TabIndex = 1;
             this.button11.Text = "Bread";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.breadToolStripMenuItem_Click);
             // 
             // button12
             // 
@@ -108,6 +110,7 @@
             this.button12.TabIndex = 2;
             this.button12.Text = "Wings";
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.wingsToolStripMenuItem_Click);
             // 
             // button13
             // 
@@ -118,6 +121,7 @@
             this.button13.TabIndex = 3;
             this.button13.Text = "Sauces";
             this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.saucesToolStripMenuItem_Click);
             // 
             // button14
             // 
@@ -128,6 +132,7 @@
             this.button14.TabIndex = 4;
             this.button14.Text = "Dessert";
             this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.dessertToolStripMenuItem_Click);
             // 
             // button15
             // 
@@ -153,23 +158,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Drinks";
             // 
-            // button2
+            // button5
             // 
-            this.button2.Location = new System.Drawing.Point(6, 73);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(143, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Coca-Cola";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(6, 115);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(143, 23);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Diet Coke";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button5.Location = new System.Drawing.Point(7, 194);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(143, 23);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "Sprite";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -179,15 +176,27 @@
             this.button4.TabIndex = 8;
             this.button4.Text = "Dr. Pepper";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button5
+            // button3
             // 
-            this.button5.Location = new System.Drawing.Point(7, 194);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(143, 23);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "Sprite";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button3.Location = new System.Drawing.Point(6, 115);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(143, 23);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "Diet Coke";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(6, 73);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(143, 23);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Coca-Cola";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // menuStrip1
             // 
@@ -216,6 +225,7 @@
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.menuToolStripMenuItem.Text = "Home";
+            this.menuToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // menuToolStripMenuItem1
             // 
@@ -230,47 +240,61 @@
             this.menuToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.menuToolStripMenuItem1.Text = "Menu";
             // 
-            // orderHistoryToolStripMenuItem
-            // 
-            this.orderHistoryToolStripMenuItem.Name = "orderHistoryToolStripMenuItem";
-            this.orderHistoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.orderHistoryToolStripMenuItem.Text = "Order History";
-            // 
             // pizzaToolStripMenuItem
             // 
             this.pizzaToolStripMenuItem.Name = "pizzaToolStripMenuItem";
             this.pizzaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pizzaToolStripMenuItem.Text = "Pizza";
+            this.pizzaToolStripMenuItem.Click += new System.EventHandler(this.pizzaToolStripMenuItem_Click);
             // 
             // breadToolStripMenuItem
             // 
             this.breadToolStripMenuItem.Name = "breadToolStripMenuItem";
             this.breadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.breadToolStripMenuItem.Text = "Bread";
+            this.breadToolStripMenuItem.Click += new System.EventHandler(this.breadToolStripMenuItem_Click);
             // 
             // wingsToolStripMenuItem
             // 
             this.wingsToolStripMenuItem.Name = "wingsToolStripMenuItem";
             this.wingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.wingsToolStripMenuItem.Text = "Wings";
+            this.wingsToolStripMenuItem.Click += new System.EventHandler(this.wingsToolStripMenuItem_Click);
             // 
             // saucesToolStripMenuItem
             // 
             this.saucesToolStripMenuItem.Name = "saucesToolStripMenuItem";
             this.saucesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saucesToolStripMenuItem.Text = "Sauces";
+            this.saucesToolStripMenuItem.Click += new System.EventHandler(this.saucesToolStripMenuItem_Click);
             // 
             // dessertToolStripMenuItem
             // 
             this.dessertToolStripMenuItem.Name = "dessertToolStripMenuItem";
             this.dessertToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dessertToolStripMenuItem.Text = "Dessert";
+            this.dessertToolStripMenuItem.Click += new System.EventHandler(this.dessertToolStripMenuItem_Click);
             // 
             // drinksToolStripMenuItem
             // 
             this.drinksToolStripMenuItem.Name = "drinksToolStripMenuItem";
             this.drinksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.drinksToolStripMenuItem.Text = "Drinks";
+            this.drinksToolStripMenuItem.Click += new System.EventHandler(this.drinksToolStripMenuItem_Click);
+            // 
+            // orderHistoryToolStripMenuItem
+            // 
+            this.orderHistoryToolStripMenuItem.Name = "orderHistoryToolStripMenuItem";
+            this.orderHistoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.orderHistoryToolStripMenuItem.Text = "Order History";
+            this.orderHistoryToolStripMenuItem.Click += new System.EventHandler(this.orderHistoryToolStripMenuItem_Click);
+            // 
+            // orderToolStripMenuItem
+            // 
+            this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
+            this.orderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.orderToolStripMenuItem.Text = "Order";
+            this.orderToolStripMenuItem.Click += new System.EventHandler(this.orderToolStripMenuItem_Click);
             // 
             // button1
             // 
@@ -281,12 +305,7 @@
             this.button1.TabIndex = 20;
             this.button1.Text = "Order";
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // orderToolStripMenuItem
-            // 
-            this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
-            this.orderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.orderToolStripMenuItem.Text = "Order";
+            this.button1.Click += new System.EventHandler(this.orderToolStripMenuItem_Click);
             // 
             // MenuDrinks
             // 

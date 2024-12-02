@@ -1,0 +1,24 @@
+﻿0101,Breadsticks,Classic,1,1.50
+0102,CheesyBread,Cheesy,1,1.50
+0103,Garlic Knots,Garlicy,1,1.50
+0201,Brownies,Choco,2,1.50
+0202,Cookies,Round,2,1.50
+0203,Cannoli,Burrito,2,1.69
+0301,Coca-Cola,A cool refreshing cola,3,0.99
+0302,Diet Coke,A cool refreshing diet cola,3,0.99
+0303,Dr. Pepper,A sharp refreshing soda,3,0.99
+0304,Sprite,Want a Sprite Cranberry?,3,0.99
+0401,Custom,Custom,4,4.99
+0402,Pepperoni,Pepy,4,4.99
+0403,Cheese,Cheesy,4,4.99
+0404,Hawaiian,Tropical,4,5.99
+0405,Meat Lover's,Meaty,4,5.99
+0406,Ultimate Cheese,Extra Super Cheesy,4,5.99
+0407,Supreme,Superior,4,5.99
+0408,Pepperoni Lover's,Extra Super Pepy!,4,5.99
+0409,Veggie Lover's,Salad on pizza?,4,5.99
+0501,Marinara,Classic tomato sauce,5,0.49
+0502,Garlic Sauce,Great for dipping!,5,0.49
+0503,Ranch,Great for wings!,5,0.49
+0601,Traditional Wings,Boney and delicious,6,3.99
+0602,Boneless Wings,None of the bones; all of the flavour,6,4.20
