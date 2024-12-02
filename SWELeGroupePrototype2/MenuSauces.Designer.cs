@@ -37,21 +37,22 @@
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.orderHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pizzaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.breadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saucesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dessertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.drinksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.orderHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.flowLayoutPanel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -149,6 +150,42 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Sauces";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(29, 80);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "We have 3 options";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(6, 168);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(144, 23);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Ranch";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(6, 139);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(144, 23);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Garlic Sauce";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 110);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(144, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Marinara";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -164,7 +201,8 @@
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem,
             this.menuToolStripMenuItem,
-            this.orderHistoryToolStripMenuItem});
+            this.orderHistoryToolStripMenuItem,
+            this.orderToolStripMenuItem});
             this.optionsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
@@ -189,83 +227,53 @@
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.menuToolStripMenuItem.Text = "Menu";
             // 
+            // pizzaToolStripMenuItem
+            // 
+            this.pizzaToolStripMenuItem.Name = "pizzaToolStripMenuItem";
+            this.pizzaToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.pizzaToolStripMenuItem.Text = "Pizza";
+            // 
+            // breadToolStripMenuItem
+            // 
+            this.breadToolStripMenuItem.Name = "breadToolStripMenuItem";
+            this.breadToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.breadToolStripMenuItem.Text = "Bread";
+            // 
+            // wingsToolStripMenuItem
+            // 
+            this.wingsToolStripMenuItem.Name = "wingsToolStripMenuItem";
+            this.wingsToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.wingsToolStripMenuItem.Text = "Wings";
+            // 
+            // saucesToolStripMenuItem
+            // 
+            this.saucesToolStripMenuItem.Name = "saucesToolStripMenuItem";
+            this.saucesToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.saucesToolStripMenuItem.Text = "Sauces";
+            // 
+            // dessertToolStripMenuItem
+            // 
+            this.dessertToolStripMenuItem.Name = "dessertToolStripMenuItem";
+            this.dessertToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.dessertToolStripMenuItem.Text = "Dessert";
+            // 
+            // drinksToolStripMenuItem
+            // 
+            this.drinksToolStripMenuItem.Name = "drinksToolStripMenuItem";
+            this.drinksToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.drinksToolStripMenuItem.Text = "Drinks";
+            // 
             // orderHistoryToolStripMenuItem
             // 
             this.orderHistoryToolStripMenuItem.Name = "orderHistoryToolStripMenuItem";
             this.orderHistoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.orderHistoryToolStripMenuItem.Text = "Order History";
             // 
-            // pizzaToolStripMenuItem
+            // orderToolStripMenuItem
             // 
-            this.pizzaToolStripMenuItem.Name = "pizzaToolStripMenuItem";
-            this.pizzaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.pizzaToolStripMenuItem.Text = "Pizza";
-            // 
-            // breadToolStripMenuItem
-            // 
-            this.breadToolStripMenuItem.Name = "breadToolStripMenuItem";
-            this.breadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.breadToolStripMenuItem.Text = "Bread";
-            // 
-            // wingsToolStripMenuItem
-            // 
-            this.wingsToolStripMenuItem.Name = "wingsToolStripMenuItem";
-            this.wingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.wingsToolStripMenuItem.Text = "Wings";
-            // 
-            // saucesToolStripMenuItem
-            // 
-            this.saucesToolStripMenuItem.Name = "saucesToolStripMenuItem";
-            this.saucesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.saucesToolStripMenuItem.Text = "Sauces";
-            // 
-            // dessertToolStripMenuItem
-            // 
-            this.dessertToolStripMenuItem.Name = "dessertToolStripMenuItem";
-            this.dessertToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.dessertToolStripMenuItem.Text = "Dessert";
-            // 
-            // drinksToolStripMenuItem
-            // 
-            this.drinksToolStripMenuItem.Name = "drinksToolStripMenuItem";
-            this.drinksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.drinksToolStripMenuItem.Text = "Drinks";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(6, 110);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Marinara";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(6, 139);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(144, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Garlic Sauce";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(6, 168);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(144, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Ranch";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 80);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "We have 3 options";
+            this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
+            this.orderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.orderToolStripMenuItem.Text = "Order";
             // 
             // MenuSauces
             // 
@@ -315,5 +323,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem orderToolStripMenuItem;
     }
 }
