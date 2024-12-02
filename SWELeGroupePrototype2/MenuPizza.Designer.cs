@@ -47,16 +47,16 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button8 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -66,6 +66,7 @@
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -270,41 +271,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Specialty Pizzas";
             // 
-            // button2
+            // button7
             // 
-            this.button2.Location = new System.Drawing.Point(7, 17);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 23);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Hawaiian";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(7, 45);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(131, 23);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Meat Lovers";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(7, 74);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(131, 23);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Ultimate Cheese";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(7, 103);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(131, 23);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "Supreme";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button7.Location = new System.Drawing.Point(6, 161);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(131, 23);
+            this.button7.TabIndex = 5;
+            this.button7.Text = "Veggie Lovers";
+            this.button7.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
@@ -315,14 +289,41 @@
             this.button6.Text = "Pepperoni Lovers";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // button5
             // 
-            this.button7.Location = new System.Drawing.Point(6, 161);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(131, 23);
-            this.button7.TabIndex = 5;
-            this.button7.Text = "Veggie Lovers";
-            this.button7.UseVisualStyleBackColor = true;
+            this.button5.Location = new System.Drawing.Point(7, 103);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(131, 23);
+            this.button5.TabIndex = 3;
+            this.button5.Text = "Supreme";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(7, 74);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(131, 23);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Ultimate Cheese";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(7, 45);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(131, 23);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "Meat Lovers";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(7, 17);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(131, 23);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Hawaiian";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -335,6 +336,17 @@
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Classic Pepperoni";
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button8.Location = new System.Drawing.Point(6, 281);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(131, 23);
+            this.button8.TabIndex = 5;
+            this.button8.Text = "Add To Order";
+            this.button8.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -358,17 +370,6 @@
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Four Cheese";
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button8.Location = new System.Drawing.Point(6, 281);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(131, 23);
-            this.button8.TabIndex = 5;
-            this.button8.Text = "Add To Order";
-            this.button8.UseVisualStyleBackColor = false;
             // 
             // button9
             // 
@@ -461,11 +462,22 @@
             this.button15.Text = "Drinks";
             this.button15.UseVisualStyleBackColor = true;
             // 
+            // button16
+            // 
+            this.button16.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.button16.Location = new System.Drawing.Point(713, 12);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(75, 23);
+            this.button16.TabIndex = 20;
+            this.button16.Text = "Order";
+            this.button16.UseVisualStyleBackColor = false;
+            // 
             // MenuPizza
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button16);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -530,5 +542,6 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button16;
     }
 }

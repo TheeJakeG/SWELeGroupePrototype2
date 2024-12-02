@@ -49,13 +49,14 @@
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.orderHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.piToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.breadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saucesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dessertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.drinksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.orderHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button3 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -267,7 +268,7 @@
             // homeToolStripMenuItem
             // 
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.homeToolStripMenuItem.Text = "Home";
             // 
             // menuToolStripMenuItem
@@ -280,56 +281,67 @@
             this.dessertToolStripMenuItem,
             this.drinksToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.menuToolStripMenuItem.Text = "Menu";
-            // 
-            // orderHistoryToolStripMenuItem
-            // 
-            this.orderHistoryToolStripMenuItem.Name = "orderHistoryToolStripMenuItem";
-            this.orderHistoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.orderHistoryToolStripMenuItem.Text = "Order History";
             // 
             // piToolStripMenuItem
             // 
             this.piToolStripMenuItem.Name = "piToolStripMenuItem";
-            this.piToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.piToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.piToolStripMenuItem.Text = "Pizza";
             // 
             // breadToolStripMenuItem
             // 
             this.breadToolStripMenuItem.Name = "breadToolStripMenuItem";
-            this.breadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.breadToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.breadToolStripMenuItem.Text = "Bread";
             // 
             // wingsToolStripMenuItem
             // 
             this.wingsToolStripMenuItem.Name = "wingsToolStripMenuItem";
-            this.wingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.wingsToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.wingsToolStripMenuItem.Text = "Wings";
             // 
             // saucesToolStripMenuItem
             // 
             this.saucesToolStripMenuItem.Name = "saucesToolStripMenuItem";
-            this.saucesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saucesToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.saucesToolStripMenuItem.Text = "Sauces";
             // 
             // dessertToolStripMenuItem
             // 
             this.dessertToolStripMenuItem.Name = "dessertToolStripMenuItem";
-            this.dessertToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dessertToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.dessertToolStripMenuItem.Text = "Dessert";
             // 
             // drinksToolStripMenuItem
             // 
             this.drinksToolStripMenuItem.Name = "drinksToolStripMenuItem";
-            this.drinksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.drinksToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.drinksToolStripMenuItem.Text = "Drinks";
+            // 
+            // orderHistoryToolStripMenuItem
+            // 
+            this.orderHistoryToolStripMenuItem.Name = "orderHistoryToolStripMenuItem";
+            this.orderHistoryToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.orderHistoryToolStripMenuItem.Text = "Order History";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.button3.Location = new System.Drawing.Point(713, 12);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 20;
+            this.button3.Text = "Order";
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // MenuBread
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
@@ -383,5 +395,6 @@
         private System.Windows.Forms.ToolStripMenuItem saucesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dessertToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem drinksToolStripMenuItem;
+        private System.Windows.Forms.Button button3;
     }
 }
